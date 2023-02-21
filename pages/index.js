@@ -32,7 +32,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Link href={"/polychromatic"}>Polychromatic</Link>
+        <div>
+          <Link className='PolyButton' href={"/polychromatic"}>Polychromatic</Link>
+        </div>
+        <div className='Flex'>
         {data && data.results.map((tech, index) => {
             return (
               <div key={index}>
@@ -48,6 +51,7 @@ export default function Home() {
             )
           })
         }
+        </div>
       </main>
     </>
   )

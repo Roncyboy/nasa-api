@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { handleSmoothScroll } from 'next/dist/shared/lib/router/router'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 export default function Polychromatic() {
@@ -56,13 +57,17 @@ export default function Polychromatic() {
 
 
   return (
-    <div>
+    <div className='polydiv'>
       <h1>Polychromatic</h1>
+        <Link className='HomeButton' href={"/"}>Home</Link>
+      <div className='polyMain'>
         <Image src={image} alt={image} width={300} height={300} />
-        <p>{time}</p>
-        <p>{date}</p>
-        <p>{coords[0]}, {coords[1]}</p>
-        
+        <div className='polyMainInfo'>
+        <p>Time: {time}</p>
+        <p>Date: {date}</p>
+        <p>Latitude: {coords[0]}, Longitute: {coords[1]}</p>
+        </div>
+    </div>
         <table>
             <thead>
                 <tr>
